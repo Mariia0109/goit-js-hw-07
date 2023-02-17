@@ -13,7 +13,7 @@ return galleryItems.map(({preview, original, description}) => {
         <img
             class="gallery__image"
             src="${preview}"
-            data-source="large-image.jpg"
+            data-source="${original}"
             alt="${description}"
         />
     </a>
@@ -27,7 +27,7 @@ return galleryItems.map(({preview, original, description}) => {
     
     function clickModal(evt) {
         evt.preventDefault();
-        if (!evt.target.dataset.source) {
+        if (!evt.target.classList.contains("gallery__image")) {
             return;
         };
         console.log(evt.target);
